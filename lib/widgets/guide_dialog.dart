@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lucaszick/widgets/guide_button.dart';
 
 class GuideDialog extends StatelessWidget {
   const GuideDialog({super.key});
@@ -11,34 +12,26 @@ class GuideDialog extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () => Navigator.of(context).pop('about'),
-              icon: Icon(
-                Icons.info_outlined,
-                color: Theme.of(context).colorScheme.primary,
-              ),
+          children: const [
+            GuideButton(
+              section: 'about',
+              name: 'About',
+              icon: Icons.info_outlined,
             ),
-            IconButton(
-              onPressed: () => Navigator.of(context).pop('skills'),
-              icon: Icon(
-                Icons.interests_outlined,
-                color: Theme.of(context).colorScheme.primary,
-              ),
+            GuideButton(
+              section: 'skills',
+              name: 'Skills',
+              icon: Icons.interests_outlined,
             ),
-            IconButton(
-              onPressed: () => Navigator.of(context).pop('work'),
-              icon: Icon(
-                Icons.work_outline,
-                color: Theme.of(context).colorScheme.primary,
-              ),
+            GuideButton(
+              section: 'work',
+              name: 'Work',
+              icon: Icons.work_outline,
             ),
-            IconButton(
-              onPressed: () => Navigator.of(context).pop('contact'),
-              icon: Icon(
-                Icons.message_outlined,
-                color: Theme.of(context).colorScheme.primary,
-              ),
+            GuideButton(
+              section: 'contact',
+              name: 'Contact',
+              icon: Icons.message_outlined,
             ),
           ],
         ),

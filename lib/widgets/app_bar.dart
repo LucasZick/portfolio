@@ -8,11 +8,38 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final AppBar appBar;
 
-  const BaseAppBar({
+  BaseAppBar({
     Key? key,
     required this.title,
     required this.appBar,
   }) : super(key: key);
+
+  final List<DropdownMenuItem> languageOptions = [
+    DropdownMenuItem(
+      value: 'br',
+      alignment: Alignment.center,
+      child: Padding(
+        padding: const EdgeInsets.all(5),
+        child: CircleFlag('br'),
+      ),
+    ),
+    DropdownMenuItem(
+      value: 'gb',
+      alignment: Alignment.center,
+      child: Padding(
+        padding: const EdgeInsets.all(5),
+        child: CircleFlag('gb'),
+      ),
+    ),
+    DropdownMenuItem(
+      value: 'de',
+      alignment: Alignment.center,
+      child: Padding(
+        padding: const EdgeInsets.all(5),
+        child: CircleFlag('de'),
+      ),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -21,40 +48,16 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(title),
       actions: [
         DropdownButton(
-          items: [
-            DropdownMenuItem(
-              value: 'br',
-              child: Padding(
-                padding: const EdgeInsets.all(5),
-                child: CircleFlag('br'),
-              ),
-            ),
-            DropdownMenuItem(
-              value: 'gb',
-              child: Padding(
-                padding: const EdgeInsets.all(5),
-                child: CircleFlag('gb'),
-              ),
-            ),
-            DropdownMenuItem(
-              value: 'de',
-              child: Padding(
-                padding: const EdgeInsets.all(5),
-                child: CircleFlag('de'),
-              ),
-            ),
-          ],
+          items: languageOptions,
           underline: const SizedBox(),
           focusColor: Colors.transparent,
-          onChanged: (String? lang) {
-            configsProvider.changeLanguage = lang!;
+          onChanged: (lang) {
+            configsProvider.changeLanguage = lang;
           },
           value: configsProvider.language,
         ),
         TextButton(
-          onPressed: () {
-            configsProvider.invertDarkMode();
-          },
+          onPressed: configsProvider.invertDarkMode,
           child: Icon(
             configsProvider.isDark
                 ? Icons.dark_mode_outlined

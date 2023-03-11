@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lucaszick/widgets/about_content.dart';
+import 'package:lucaszick/widgets/section_contents/about_content.dart';
 import 'package:lucaszick/widgets/guide_dialog.dart';
 import 'package:lucaszick/widgets/home_section.dart';
-import 'package:lucaszick/widgets/me_content.dart';
-import 'package:lucaszick/widgets/skills_content.dart';
+import 'package:lucaszick/widgets/section_contents/me_content.dart';
+import 'package:lucaszick/widgets/section_contents/skills_content.dart';
 
 import '../widgets/app_bar.dart';
 import '../widgets/app_drawer.dart';
@@ -81,25 +81,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(
-        appBar: AppBar(),
-        title: "",
-      ),
+      appBar: BaseAppBar(appBar: AppBar(), title: ""),
       drawer: BaseDrawer(sectionKeys: sectionKeys),
       floatingActionButtonLocation: _showBackToTopButton
           ? FloatingActionButtonLocation.endFloat
           : FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: _showBackToTopButton
-            ? _scrollToTop
-            : () => _showGuideDialog(context),
-        child: Icon(
-          _showBackToTopButton
-              ? Icons.arrow_upward_rounded
-              : Icons.arrow_downward_rounded,
-          color: Theme.of(context).textTheme.bodyMedium?.color,
-        ),
-      ),
+      floatingActionButton: _showBackToTopButton
+          ? FloatingActionButton(
+              onPressed: _scrollToTop,
+              child: Icon(Icons.arrow_upward_rounded,
+                  color: Theme.of(context).textTheme.bodyMedium?.color),
+            )
+          : FloatingActionButton(
+              onPressed: () => _showGuideDialog(context),
+              child: Icon(
+                Icons.arrow_downward_rounded,
+                color: Theme.of(context).textTheme.bodyMedium?.color,
+              ),
+            ),
       body: SingleChildScrollView(
         controller: controller,
         child: Center(

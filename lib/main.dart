@@ -36,11 +36,9 @@ class MyApp extends StatelessWidget {
               ),
               fontFamily: 'Proxima Nova',
             ),
-            initialRoute: AppRoutes.home,
             themeMode: notifier.isDark ? ThemeMode.dark : ThemeMode.light,
-            routes: {
-              AppRoutes.home: (ctx) => const HomePage(),
-            },
+            initialRoute: AppRoutes.home,
+            routes: {AppRoutes.home: (ctx) => const HomePage()},
           );
         },
       ),

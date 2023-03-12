@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               brightness: Brightness.light,
               colorScheme: ColorScheme.fromSwatch(
-                primarySwatch: Colors.green,
+                primarySwatch: Colors.orange,
                 brightness: Brightness.light,
               ),
               fontFamily: 'Proxima Nova',
@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
               brightness: Brightness.dark,
               colorScheme: ColorScheme.fromSwatch(
-                primarySwatch: Colors.green,
-                accentColor: Colors.green,
+                primarySwatch: Colors.orange,
+                accentColor: Colors.orange,
                 brightness: Brightness.dark,
               ),
               fontFamily: 'Proxima Nova',

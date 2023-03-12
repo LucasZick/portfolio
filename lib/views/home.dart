@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucaszick/widgets/section_contents/about_content.dart';
 import 'package:lucaszick/widgets/guide_dialog.dart';
 import 'package:lucaszick/widgets/home_section.dart';
+import 'package:lucaszick/widgets/section_contents/contact_content.dart';
 import 'package:lucaszick/widgets/section_contents/me_content.dart';
 import 'package:lucaszick/widgets/section_contents/skills_content.dart';
 
@@ -54,7 +55,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    controller.dispose(); // dispose the controller
+    controller.dispose();
     super.dispose();
   }
 
@@ -66,9 +67,9 @@ class _HomePageState extends State<HomePage> {
           setState(
             () {
               if (controller.offset >= 300) {
-                _showBackToTopButton = true; // show the back-to-top button
+                _showBackToTopButton = true;
               } else {
-                _showBackToTopButton = false; // hide the back-to-top button
+                _showBackToTopButton = false;
               }
             },
           );
@@ -89,15 +90,11 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: _showBackToTopButton
           ? FloatingActionButton(
               onPressed: _scrollToTop,
-              child: Icon(Icons.arrow_upward_rounded,
-                  color: Theme.of(context).textTheme.bodyMedium?.color),
+              child: const Icon(Icons.arrow_upward_rounded),
             )
           : FloatingActionButton(
               onPressed: () => _showGuideDialog(context),
-              child: Icon(
-                Icons.arrow_downward_rounded,
-                color: Theme.of(context).textTheme.bodyMedium?.color,
-              ),
+              child: const Icon(Icons.arrow_downward_rounded),
             ),
       body: SingleChildScrollView(
         controller: controller,
@@ -134,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                 title: 'Contact',
                 scrollKey: sectionKeys['contact']!,
                 spacer: 0,
-                child: const Text('contact'),
+                child: const ContactContent(),
               ),
             ],
           ),

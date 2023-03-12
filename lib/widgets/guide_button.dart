@@ -35,17 +35,29 @@ class _GuideButtonState extends State<GuideButton> {
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeInOut,
         transform: transform,
-        child: Column(
-          children: [
-            IconButton(
-              onPressed: () => Navigator.of(context).pop(widget.section),
-              icon: Icon(
+        child: TextButton(
+          onPressed: () => Navigator.of(context).pop(widget.section),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
                 widget.icon,
-                color: Theme.of(context).colorScheme.primary,
+                color: isHovered
+                    ? Theme.of(context).colorScheme.primary
+                    : Colors.grey,
+                size: isHovered ? 25 : 20,
               ),
-            ),
-            if (isHovered) Center(child: Text(widget.name)) else const Text(''),
-          ],
+              Center(
+                child: Text(
+                  widget.name,
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.bodyMedium?.color,
+                    fontWeight: isHovered ? FontWeight.bold : FontWeight.normal,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

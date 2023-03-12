@@ -133,6 +133,17 @@ class _HomePageState extends State<HomePage> {
                 spacer: 0,
                 child: const ContactContent(),
               ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: SelectableText(
+                    '© 2023 Lucas Alexandre Zick',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),

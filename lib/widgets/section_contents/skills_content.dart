@@ -12,7 +12,6 @@ class SkillsContent extends StatelessWidget {
         child: GridView.extent(
           shrinkWrap: true,
           maxCrossAxisExtent: 150,
-          padding: const EdgeInsets.all(4),
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
           children: const [
@@ -29,6 +28,7 @@ class SkillsContent extends StatelessWidget {
             TechBox(techName: 'redis'),
             TechBox(techName: 'mongo'),
             TechBox(techName: 'git'),
+            TechBox(techName: 'github'),
             TechBox(techName: 'docker'),
             TechBox(techName: 'bash'),
             TechBox(techName: 'linux'),

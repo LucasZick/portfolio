@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class MeContent extends StatelessWidget {
@@ -5,11 +6,14 @@ class MeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       width: 600,
       child: Text(
-        "a passionate full-stack developer, crafting elegant, scalable solutions and pushing boundaries in the ever-evolving tech landscape.",
-        style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
+        "me_phrase".tr(),
+        style: const TextStyle(
+          fontSize: 30,
+          fontStyle: FontStyle.italic,
+        ),
       ),
     );
   }

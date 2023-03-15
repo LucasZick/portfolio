@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -5,7 +6,21 @@ import 'package:lucaszick/utils/app_routes.dart';
 import 'package:lucaszick/providers/configs.dart';
 import 'package:lucaszick/views/home.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(EasyLocalization(
+    path: 'assets/translations',
+    supportedLocales: const [
+      Locale('en', 'US'),
+      Locale('de', 'DE'),
+      Locale('pt', 'BR'),
+    ],
+    startLocale: const Locale("pt", "BR"),
+    fallbackLocale: const Locale("en", "US"),
+    child: const MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,10 +28,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => Configs(language: 'gb'),
+      create: (_) => Configs(),
       child: Consumer<Configs>(
         builder: (ctx, notifier, child) {
           return MaterialApp(
+            locale: context.locale,
+            supportedLocales: context.supportedLocales,
+            localizationsDelegates: context.localizationDelegates,
             debugShowCheckedModeBanner: false,
             title: "Zick's Portfolio",
             theme: ThemeData(

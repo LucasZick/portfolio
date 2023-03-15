@@ -1,4 +1,5 @@
 import 'package:circle_flags/circle_flags.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +17,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   final List<DropdownMenuItem> languageOptions = [
     DropdownMenuItem(
-      value: 'br',
+      value: const Locale('pt', 'BR'),
       alignment: Alignment.center,
       child: Padding(
         padding: const EdgeInsets.all(5),
@@ -24,7 +25,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     ),
     DropdownMenuItem(
-      value: 'gb',
+      value: const Locale('en', 'US'),
       alignment: Alignment.center,
       child: Padding(
         padding: const EdgeInsets.all(5),
@@ -32,7 +33,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     ),
     DropdownMenuItem(
-      value: 'de',
+      value: const Locale('de', 'DE'),
       alignment: Alignment.center,
       child: Padding(
         padding: const EdgeInsets.all(5),
@@ -51,10 +52,10 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           items: languageOptions,
           underline: const SizedBox(),
           focusColor: Colors.transparent,
-          onChanged: (lang) {
-            configsProvider.changeLanguage = lang;
+          onChanged: (locale) {
+            configsProvider.changeLanguage(locale, context);
           },
-          value: configsProvider.language,
+          value: context.locale,
         ),
         TextButton(
           onPressed: configsProvider.invertDarkMode,

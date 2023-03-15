@@ -1,0 +1,21 @@
+{
+    "about_option" : "Über",
+    "skills_option" : "Fähigkeiten",
+    "work_option" : "Arbeit",
+    "contact_option" : "Kontakt",
+    "me_title" : "Hallo! Ich bin\nLucas Zick,",
+    "me_phrase" : "ein leidenschaftlicher Full-Stack-Entwickler, der elegante, skalierbare Lösungen entwickelt und Grenzen in der sich ständig weiterentwickelnden Technologielandschaft erweitert.",
+    "formal_studies" : "FORMELLES STUDIUM",
+    "myself" : "ICH SELBST",
+    "web_development" : "Web Entwicklung - SENAI SC",
+    "information_systems" : "Informationssysteme - UDESC",
+    "international_business" : "Internationale Geschäfte - HTW Berlin",
+    "technical_course" : "Technischer Kurs",
+    "graduation_degree" : "Graduierung",
+    "about_me" : "Ein brasilianischer Full-Stack-Entwickler, der derzeit mit einem Universitätsstipendium in Berlin lebt. Ich habe bereits 2016 mit dem Studium technischer Studiengänge begonnen und habe seitdem mein Studium in Softwareentwicklung und -verwaltung begonnen. Mit 21 lerne ich schnell, programmiere leidenschaftlich gerne und arbeite gerne mit anderen zusammen.\n\nWenn ich nicht programmiere, beschäftige ich mich normalerweise mit Autos und Basketball. Ich habe Basketball gespielt und interessiere mich sehr für die Mechanik von Autos. Ich bin ständig auf der Suche nach neuen Herausforderungen, um meine Fähigkeiten und Kenntnisse in der Softwareentwicklung weiterzuentwickeln.\n\nIch glaube fest an die Kraft der Teamarbeit und effektiven Kommunikation, um in jedem Projekt erfolgreich zu sein. Daher bin ich stets bestrebt, gute Arbeitsbeziehungen mit meinen Kollegen und Kunden zu pflegen. Ich freue mich auf die Zukunft der Softwareentwicklung und bin bestrebt, auf jede erdenkliche Weise dazu beizutragen.",
+    "name" : "Name",
+    "email" : "E-mail",
+    "message" : "Nachricht",
+    "send_message" : "Nachricht senden",
+    "guide_dialog_title" : "Wohin willst du gehen?"
+}

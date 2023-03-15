@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lucaszick/widgets/drawer_list_button.dart';
 import 'package:lucaszick/widgets/header_drawer.dart';
@@ -18,22 +19,22 @@ class BaseDrawer extends StatelessWidget {
             Column(
               children: [
                 DrawerListButton(
-                  title: 'About',
+                  title: "about_option".tr(),
                   icon: Icons.info_outlined,
                   scrollKey: sectionKeys['about']!,
                 ),
                 DrawerListButton(
-                  title: 'Skills',
+                  title: 'skills_option'.tr(),
                   icon: Icons.interests_outlined,
                   scrollKey: sectionKeys['skills']!,
                 ),
                 DrawerListButton(
-                  title: 'Work',
+                  title: 'work_option'.tr(),
                   icon: Icons.work_outline_outlined,
                   scrollKey: sectionKeys['work']!,
                 ),
                 DrawerListButton(
-                  title: 'Contact',
+                  title: 'contact_option'.tr(),
                   icon: Icons.message_outlined,
                   scrollKey: sectionKeys['contact']!,
                 ),

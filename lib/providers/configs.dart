@@ -1,18 +1,21 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Configs with ChangeNotifier {
   bool isDark;
-  String language;
 
-  Configs({this.isDark = false, required this.language});
-
-  set changeLanguage(String lang) {
-    language = lang;
-    notifyListeners();
-  }
+  Configs({this.isDark = false});
 
   set changeDarkMode(value) {
     isDark = value;
+    notifyListeners();
+  }
+
+  void changeLanguage(
+    Locale locale,
+    BuildContext context,
+  ) async {
+    await context.setLocale(locale);
     notifyListeners();
   }
 

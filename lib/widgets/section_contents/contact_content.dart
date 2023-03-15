@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lucaszick/utils/validators.dart';
 
@@ -43,10 +44,10 @@ class _ContactContentState extends State<ContactContent> {
                   child: TextFormField(
                     controller: _nameController,
                     onChanged: _updateButton,
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.person_outlined),
-                      label: Text('Name'),
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.person_outlined),
+                      label: Text("name".tr()),
+                      border: const OutlineInputBorder(),
                     ),
                     validator: Validators.validateName,
                   ),
@@ -57,10 +58,10 @@ class _ContactContentState extends State<ContactContent> {
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     onChanged: _updateButton,
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.email_outlined),
-                      label: Text('E-mail'),
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.email_outlined),
+                      label: Text("email".tr()),
+                      border: const OutlineInputBorder(),
                     ),
                     validator: Validators.validateEmail,
                   ),
@@ -72,9 +73,9 @@ class _ContactContentState extends State<ContactContent> {
               controller: _messageController,
               maxLines: 10,
               onChanged: _updateButton,
-              decoration: const InputDecoration(
-                label: Text('Message'),
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                label: Text("message".tr()),
+                border: const OutlineInputBorder(),
               ),
               validator: Validators.validateMessage,
             ),
@@ -103,10 +104,11 @@ class _ContactContentState extends State<ContactContent> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
-                      Text('Send message', style: TextStyle(fontSize: 20)),
-                      SizedBox(width: 10),
-                      Icon(Icons.send_rounded),
+                    children: [
+                      Text("send_message".tr(),
+                          style: const TextStyle(fontSize: 20)),
+                      const SizedBox(width: 10),
+                      const Icon(Icons.send_rounded),
                     ],
                   ),
                 ),

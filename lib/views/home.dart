@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lucaszick/widgets/section_contents/about_content.dart';
 import 'package:lucaszick/widgets/guide_dialog.dart';
@@ -104,34 +105,34 @@ class _HomePageState extends State<HomePage> {
             mainAxisSize: MainAxisSize.max,
             children: [
               HomeSection(
-                title: "Hi! I'm\nLucas Zick,",
+                title: "me_title".tr(),
                 scrollKey: sectionKeys['me']!,
                 spacer: 400,
-                child: const MeContent(),
+                child: MeContent(),
               ),
               HomeSection(
-                title: 'About',
+                title: 'about_option'.tr(),
                 scrollKey: sectionKeys['about']!,
                 spacer: 100,
-                child: const AboutContent(),
+                child: AboutContent(),
               ),
               HomeSection(
-                title: 'Skills',
+                title: 'skills_option'.tr(),
                 scrollKey: sectionKeys['skills']!,
                 spacer: 100,
                 child: const SkillsContent(),
               ),
               HomeSection(
-                title: 'Work',
+                title: 'work_option'.tr(),
                 scrollKey: sectionKeys['work']!,
                 spacer: 100,
                 child: const Text('work'),
               ),
               HomeSection(
-                title: 'Contact',
+                title: 'contact_option'.tr(),
                 scrollKey: sectionKeys['contact']!,
                 spacer: 0,
-                child: const ContactContent(),
+                child: ContactContent(),
               ),
               Center(
                 child: Padding(

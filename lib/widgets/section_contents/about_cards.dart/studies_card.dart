@@ -1,4 +1,5 @@
 import 'package:circle_flags/circle_flags.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class StudiesCard extends StatelessWidget {
@@ -11,12 +12,12 @@ class StudiesCard extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(20),
+            Padding(
+              padding: const EdgeInsets.all(20),
               child: Center(
                 child: Text(
-                  'FORMAL STUDIES',
-                  style: TextStyle(
+                  "formal_studies".tr(),
+                  style: const TextStyle(
                     fontSize: 30,
                     fontStyle: FontStyle.italic,
                   ),
@@ -27,20 +28,20 @@ class StudiesCard extends StatelessWidget {
               children: [
                 ListTile(
                   leading: const Icon(Icons.school_outlined),
-                  title: const Text('Web Development - SENAI SC'),
-                  subtitle: const Text('Technical Course'),
+                  title: Text("web_development".tr()),
+                  subtitle: Text("technical_course".tr()),
                   trailing: CircleFlag('br'),
                 ),
                 ListTile(
                   leading: const Icon(Icons.school_outlined),
-                  title: const Text('Information Systems - UDESC'),
-                  subtitle: const Text('Graduation Degree'),
+                  title: Text("information_systems".tr()),
+                  subtitle: Text("graduation_degree".tr()),
                   trailing: CircleFlag('br'),
                 ),
                 ListTile(
                   leading: const Icon(Icons.school_outlined),
-                  title: const Text('International Business - HTW Berlin'),
-                  subtitle: const Text('Graduation Degree'),
+                  title: Text("international_business".tr()),
+                  subtitle: Text("graduation_degree".tr()),
                   trailing: CircleFlag('de'),
                 ),
               ],

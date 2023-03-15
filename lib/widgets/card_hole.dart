@@ -26,7 +26,6 @@ class CardHole extends StatelessWidget {
       alignment: alignment,
       child: Container(
         width: 20,
-        height: 400,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: begin,
@@ -72,7 +71,6 @@ class HoleShadow extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(5)),
         ),
         width: 15,
-        height: 400,
       ),
     );
   }

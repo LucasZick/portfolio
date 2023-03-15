@@ -1,3 +1,5 @@
+import 'package:universal_io/io.dart';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +11,7 @@ import 'package:lucaszick/views/home.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  String localeName = Platform.localeName;
   runApp(EasyLocalization(
     path: 'assets/translations',
     supportedLocales: const [
@@ -16,7 +19,7 @@ Future<void> main() async {
       Locale('de', 'DE'),
       Locale('pt', 'BR'),
     ],
-    startLocale: const Locale("pt", "BR"),
+    startLocale: Locale(localeName.substring(0, 2), localeName.substring(3, 5)),
     fallbackLocale: const Locale("en", "US"),
     child: const MyApp(),
   ));

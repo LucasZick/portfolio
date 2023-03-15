@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+
 class Validators {
   static bool _isLettersOnly(input) {
     return RegExp(r'^[A-Za-z. ]+$').hasMatch(input);
@@ -15,45 +17,45 @@ class Validators {
 
   static String? validateName(String? input) {
     if (input == null || input.isEmpty) {
-      return 'Please enter your name';
+      return "validator_empty_name".tr();
     }
     if (input.length > 30) {
-      return 'Your name is too big, try writing it in a shorter way';
+      return "validator_big_name".tr();
     }
     if (!Validators._isLettersOnly(input)) {
-      return 'Your name must contain only letters and name characteres';
+      return "validator_only_valid_characters_name".tr();
     }
     if (!Validators._hasLetters(input)) {
-      return 'Your name must contain at least one letter';
+      return "validator_needs_letter_name".tr();
     }
     return null;
   }
 
   static String? validateEmail(String? input) {
     if (input == null || input.isEmpty) {
-      return 'Please enter your e-mail';
+      return "validator_empty_email".tr();
     }
     if (input.length > 320) {
-      return 'Your e-mail exceeds the character limit of e-mail addresses';
+      return "validator_big_email".tr();
     }
     if (!Validators._hasLetters(input)) {
-      return 'Your e-mail must contain at least one letter';
+      return "validator_needs_letter_email".tr();
     }
     if (!Validators._isValidEmail(input)) {
-      return 'Invalid e-mail';
+      return "validator_invalid_email".tr();
     }
     return null;
   }
 
   static String? validateMessage(String? input) {
     if (input == null || input.isEmpty) {
-      return 'Please enter some message';
+      return "validator_empty_message".tr();
     }
     if (input.length > 2000) {
-      return 'Your message exceeds the character limit, try writing it in a shorter way';
+      return "validator_big_message".tr();
     }
     if (!Validators._hasLetters(input)) {
-      return 'Your message must contain at least one letter';
+      return "validator_needs_letter_message".tr();
     }
     return null;
   }

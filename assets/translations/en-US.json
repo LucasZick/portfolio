@@ -3,8 +3,10 @@
     "skills_option" : "Skills",
     "work_option" : "Work",
     "contact_option" : "Contact",
+    
     "me_title" : "Hi! I'm\nLucas Zick,",
     "me_phrase" : "a passionate full-stack developer, crafting elegant, scalable solutions and pushing boundaries in the ever-evolving tech landscape.",
+    
     "formal_studies" : "FORMAL STUDIES",
     "myself" : "MYSELF",
     "web_development" : "Web Development - SENAI SC",
@@ -13,9 +15,23 @@
     "technical_course" : "Technical Course",
     "graduation_degree" : "Graduation Degree",
     "about_me" : "A Brazilian full-stack developer currently based in Berlin on a university scholarship. I started studying technical courses back in 2016 and have since started my degrees in software development and administration. At 21, I'm a quick learner who is passionate about coding and enjoys working collaboratively with others.\n\nWhen I'm not coding, I'm usually exploring my interests in cars and basketball. I used to play basketball competitively and have a keen interest in the mechanics of cars. I'm constantly seeking out new challenges to develop my skills and knowledge in software development.\n\nI strongly believe in the power of teamwork and effective communication in achieving success in any project. Therefore, I always strive to foster good working relationships with my colleagues and clients. I'm excited about the future of software development and am eager to contribute to it in any way I can.",
+    
     "name" : "Name",
     "email" : "E-mail",
     "message" : "Message",
     "send_message" : "Send message",
-    "guide_dialog_title" : "Where do you want to go?"
+
+    "guide_dialog_title" : "Where do you want to go?",
+
+    "validator_empty_name" : "Please enter your name",
+    "validator_big_name" : "Your name is too big, try writing it in a shorter way",
+    "validator_only_valid_characters_name" : "Your name must contain only letters and name characteres",
+    "validator_needs_letter_name" : "Your name must contain at least one letter",
+    "validator_empty_email" : "Please enter your e-mail address",
+    "validator_big_email" : "Your e-mail exceeds the character limit of e-mail addresses",
+    "validator_needs_letter_email" : "Your e-mail must contain at least one letter",
+    "validator_invalid_email" : "Invalid e-mail address",
+    "validator_empty_message" : "Please enter some message describing the reason of your contact",
+    "validator_big_message" : "Your message exceeds the character limit, try writing it in a shorter way",
+    "validator_needs_letter_message" : "Your message must contain at least one letter"
 }

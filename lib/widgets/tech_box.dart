@@ -1,3 +1,5 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class TechBox extends StatefulWidget {
@@ -32,25 +34,37 @@ class _TechBoxState extends State<TechBox> {
           elevation: isHovered ? 20 : 10,
           shadowColor:
               isHovered ? Theme.of(context).colorScheme.primary : Colors.black,
-          child: Container(
-            width: 20,
-            height: 20,
-            padding: const EdgeInsets.all(5),
-            child: Center(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset(
                     'assets/images/tech_logos/${widget.techName}.png',
                     filterQuality: FilterQuality.high,
-                    width: 70,
-                    height: 70,
+                    width: 50,
+                    height: 50,
                   ),
-                  Text(
-                    widget.techName.toUpperCase(),
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
+                  if (isHovered)
+                    DefaultTextStyle(
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Theme.of(context).textTheme.bodyMedium!.color!,
+                      ),
+                      child: AnimatedTextKit(
+                        isRepeatingAnimation: true,
+                        animatedTexts: [
+                          WavyAnimatedText(widget.techName.toUpperCase()),
+                        ],
+                      ),
+                    )
+                  else
+                    AutoSizeText(
+                      widget.techName.toUpperCase(),
+                      style: const TextStyle(fontSize: 15),
+                      maxLines: 1,
+                    )
                 ],
               ),
             ),

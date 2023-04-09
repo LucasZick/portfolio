@@ -12,6 +12,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   String localeName = Platform.localeName;
+  List suportedLocales = const [
+    Locale('en', 'US'),
+    Locale('de', 'DE'),
+    Locale('pt', 'BR'),
+  ];
+  Locale actualLocale =
+      Locale(localeName.substring(0, 2), localeName.substring(3, 5));
   runApp(EasyLocalization(
     path: 'assets/translations',
     supportedLocales: const [
@@ -19,7 +26,9 @@ Future<void> main() async {
       Locale('de', 'DE'),
       Locale('pt', 'BR'),
     ],
-    startLocale: Locale(localeName.substring(0, 2), localeName.substring(3, 5)),
+    startLocale: suportedLocales.contains(actualLocale)
+        ? actualLocale
+        : const Locale("en", "US"),
     fallbackLocale: const Locale("en", "US"),
     child: const MyApp(),
   ));

@@ -6,6 +6,7 @@ import 'package:lucaszick/widgets/home_section.dart';
 import 'package:lucaszick/widgets/section_contents/contact_content.dart';
 import 'package:lucaszick/widgets/section_contents/me_content.dart';
 import 'package:lucaszick/widgets/section_contents/skills_content.dart';
+import 'package:lucaszick/widgets/section_contents/work_content.dart';
 
 import '../widgets/app_bar.dart';
 import '../widgets/app_drawer.dart';
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                 title: 'work_option'.tr(),
                 scrollKey: sectionKeys['work']!,
                 spacer: 100,
-                child: const Text('work'),
+                child: WorkContent(),
               ),
               HomeSection(
                 title: 'contact_option'.tr(),

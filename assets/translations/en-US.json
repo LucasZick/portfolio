@@ -9,6 +9,11 @@
     
     "formal_studies" : "FORMAL STUDIES",
     "myself" : "MYSELF",
+    "hobbies" : "HOBBIES",
+    "skating" : "Skateboard",
+    "pedal" : "Pedal",
+    "basketball" : "Basketball",
+    "musical_production" : "Musical Production",
     "web_development" : "Web Development - SENAI SC",
     "information_systems" : "Information Systems - UDESC",
     "international_business" : "International Business - HTW Berlin",
@@ -16,6 +21,9 @@
     "graduation_degree" : "Graduation Degree",
     "about_me" : "A Brazilian full-stack developer currently based in Berlin on a university scholarship. I started studying technical courses back in 2016 and have since started my degrees in software development and administration. At 21, I'm a quick learner who is passionate about coding and enjoys working collaboratively with others.\n\nWhen I'm not coding, I'm usually exploring my interests in cars and basketball. I used to play basketball competitively and have a keen interest in the mechanics of cars. I'm constantly seeking out new challenges to develop my skills and knowledge in software development.\n\nI strongly believe in the power of teamwork and effective communication in achieving success in any project. Therefore, I always strive to foster good working relationships with my colleagues and clients. I'm excited about the future of software development and am eager to contribute to it in any way I can.",
     
+    "more" : "Show more",
+    "less" : "Show less",
+
     "name" : "Name",
     "email" : "E-mail",
     "message" : "Message",

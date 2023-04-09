@@ -9,6 +9,11 @@
     
     "formal_studies" : "ESTUDOS FORMAIS",
     "myself" : "SOBRE MIM",
+    "hobbies" : "HOBBIES",
+    "skating" : "Skateboard",
+    "pedal" : "Pedalar",
+    "basketball" : "Basquetebol",
+    "musical_production" : "Produção musical",
     "web_development" : "Desenvolvimento Web - SENAI SC",
     "information_systems" : "Sistemas de Informação - UDESC",
     "international_business" : "Negócios Internacionais - HTW Berlin",
@@ -16,6 +21,9 @@
     "graduation_degree" : "Bacharelado",
     "about_me" : "Um desenvolvedor full-stack brasileiro atualmente baseado em Berlim com uma bolsa universitária. Comecei a cursar cursos técnicos em 2016 e desde então comecei meus estudos em desenvolvimento de software e administração. Aos 21 anos, aprendo rápido, sou apaixonado por programação e gosto de trabalhar em colaboração com outras pessoas.\n\nQuando não estou programando, geralmente estou explorando meus interesses em carros e basquete. Eu costumava jogar basquete competitivamente e tenho um grande interesse na mecânica dos carros. Estou constantemente em busca de novos desafios para desenvolver minhas habilidades e conhecimentos em desenvolvimento de software.\n\nAcredito fortemente no poder do trabalho em equipe e na comunicação eficaz para alcançar o sucesso em qualquer projeto. Portanto, sempre me esforço para promover boas relações de trabalho com meus colegas e clientes. Estou entusiasmado com o futuro do desenvolvimento de software e ansioso para contribuir com ele da maneira que puder.",
     
+    "more" : "Mostrar mais",
+    "less" : "Mostrar menos",
+
     "name" : "Nome",
     "email" : "E-mail",
     "message" : "Mensagem",

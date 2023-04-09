@@ -13,6 +13,7 @@ class SkillsContent extends StatelessWidget {
           shrinkWrap: true,
           maxCrossAxisExtent: 150,
           mainAxisSpacing: 10,
+          physics: const NeverScrollableScrollPhysics(),
           crossAxisSpacing: 10,
           children: const [
             TechBox(techName: 'python'),

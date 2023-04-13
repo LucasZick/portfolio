@@ -46,6 +46,13 @@ class AboutContent extends StatelessWidget {
                   ],
                 ),
               ),
+              if (isScreenWide)
+                Container(
+                  width: 1,
+                  height: 500,
+                  color: Theme.of(context).colorScheme.primary,
+                  margin: const EdgeInsets.symmetric(vertical: 50),
+                ),
               SizedBox(
                 width: isScreenWide
                     ? 400

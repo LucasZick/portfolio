@@ -52,10 +52,42 @@ class _TechBoxState extends State<TechBox> {
                         fontSize: 15,
                         color: Theme.of(context).textTheme.bodyMedium!.color!,
                       ),
-                      child: AnimatedTextKit(
-                        isRepeatingAnimation: true,
-                        animatedTexts: [
-                          WavyAnimatedText(widget.techName.toUpperCase()),
+                      child: Stack(
+                        children: [
+                          Text(
+                            widget.techName.toUpperCase(),
+                            style: const TextStyle(fontSize: 15),
+                          ),
+                          AnimatedTextKit(
+                            isRepeatingAnimation: true,
+                            repeatForever: true,
+                            animatedTexts: [
+                              ColorizeAnimatedText(
+                                widget.techName.toUpperCase(),
+                                speed: const Duration(milliseconds: 800),
+                                colors: [
+                                  Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .color!,
+                                  Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .color!,
+                                  Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .color!,
+                                  Theme.of(context).colorScheme.primary,
+                                  Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .color!,
+                                ],
+                                textStyle: const TextStyle(fontSize: 15),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     )

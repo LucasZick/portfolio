@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             localizationsDelegates: context.localizationDelegates,
             debugShowCheckedModeBanner: false,
-            title: "Zick's Portfolio",
+            title: "Lucas Zick",
             theme: ThemeData(
               brightness: Brightness.light,
               colorScheme: ColorScheme.fromSwatch(

@@ -63,7 +63,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             configsProvider.isDark
                 ? Icons.dark_mode_outlined
                 : Icons.light_mode_outlined,
-            color: Colors.white,
+            color: Theme.of(context).textTheme.bodyMedium?.color,
           ),
         )
       ],

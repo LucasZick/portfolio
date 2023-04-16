@@ -92,11 +92,15 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: _showBackToTopButton
           ? FloatingActionButton(
               onPressed: _scrollToTop,
-              child: const Icon(Icons.arrow_upward_rounded),
+              child: Icon(Icons.arrow_upward_rounded,
+                  color: Theme.of(context).textTheme.bodyMedium?.color),
             )
           : FloatingActionButton(
               onPressed: () => _showGuideDialog(context),
-              child: const Icon(Icons.arrow_downward_rounded),
+              child: Icon(
+                Icons.arrow_downward_rounded,
+                color: Theme.of(context).textTheme.bodyMedium?.color,
+              ),
             ),
       body: SingleChildScrollView(
         controller: controller,

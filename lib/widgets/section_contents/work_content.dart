@@ -25,6 +25,5 @@ class WorkContent extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

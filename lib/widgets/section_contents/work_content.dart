@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucaszick/widgets/card_hole.dart';
+import 'package:lucaszick/widgets/carousel_card.dart';
 import 'package:lucaszick/widgets/carousel_slider.dart';
-import 'package:lucaszick/widgets/section_contents/about_cards.dart/about_me_card.dart';
-import 'package:lucaszick/widgets/section_contents/about_cards.dart/studies_card.dart';
 
 class WorkContent extends StatelessWidget {
   const WorkContent({super.key});
@@ -18,7 +17,7 @@ class WorkContent extends StatelessWidget {
             CardHole(side: Side.left),
             CardHole(side: Side.right),
             Carousel(
-              widgetList: [StudiesCard(), AboutMeCard()],
+              widgetList: [CarouselCard()],
             ),
             HoleShadow(side: Side.left),
             HoleShadow(side: Side.right),

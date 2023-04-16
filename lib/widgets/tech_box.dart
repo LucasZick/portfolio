@@ -56,6 +56,7 @@ class _TechBoxState extends State<TechBox> {
                         children: [
                           Text(
                             widget.techName.toUpperCase(),
+                            maxLines: 1,
                             style: const TextStyle(fontSize: 15),
                           ),
                           AnimatedTextKit(

@@ -109,13 +109,13 @@ class _HomePageState extends State<HomePage> {
                 title: "me_title".tr(),
                 scrollKey: sectionKeys['me']!,
                 spacer: 400,
-                child: MeContent(),
+                child: const MeContent(),
               ),
               HomeSection(
                 title: 'about_option'.tr(),
                 scrollKey: sectionKeys['about']!,
                 spacer: 100,
-                child: AboutContent(),
+                child: const AboutContent(),
               ),
               HomeSection(
                 title: 'skills_option'.tr(),
@@ -127,13 +127,13 @@ class _HomePageState extends State<HomePage> {
                 title: 'work_option'.tr(),
                 scrollKey: sectionKeys['work']!,
                 spacer: 100,
-                child: WorkContent(),
+                child: const WorkContent(),
               ),
               HomeSection(
                 title: 'contact_option'.tr(),
                 scrollKey: sectionKeys['contact']!,
                 spacer: 0,
-                child: ContactContent(),
+                child: const ContactContent(),
               ),
               Center(
                 child: Padding(

@@ -14,111 +14,105 @@ class AboutContent extends StatelessWidget {
     return Center(
       child: Padding(
         padding: const EdgeInsets.only(top: 20),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Flex(
-            direction: isScreenWide ? Axis.horizontal : Axis.vertical,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: isScreenWide
-                    ? 400
-                    : MediaQuery.of(context).size.width * 0.7,
-                child: Column(
-                  children: [
-                    AboutBox(
-                      title: "myself".tr(),
-                      child: Padding(
-                        padding: EdgeInsets.only(right: isScreenWide ? 10 : 0),
-                        child: isScreenWide
-                            ? Text(
-                                "about_me".tr(),
-                                textAlign: TextAlign.right,
-                                style: const TextStyle(fontSize: 18),
-                              )
-                            : AnimatedTextWithButton(
-                                text: "about_me".tr(),
-                                textStyle: const TextStyle(fontSize: 18),
-                              ),
-                      ),
+        child: Flex(
+          direction: isScreenWide ? Axis.horizontal : Axis.vertical,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width:
+                  isScreenWide ? 400 : MediaQuery.of(context).size.width * 0.9,
+              child: Column(
+                children: [
+                  AboutBox(
+                    title: "myself".tr(),
+                    child: Padding(
+                      padding: EdgeInsets.only(right: isScreenWide ? 10 : 0),
+                      child: isScreenWide
+                          ? Text(
+                              "about_me".tr(),
+                              textAlign: TextAlign.right,
+                              style: const TextStyle(fontSize: 18),
+                            )
+                          : AnimatedTextWithButton(
+                              text: "about_me".tr(),
+                              textStyle: const TextStyle(fontSize: 18),
+                            ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              if (isScreenWide)
-                Container(
-                  width: 1,
-                  height: 500,
-                  color: Theme.of(context).colorScheme.primary,
-                  margin: const EdgeInsets.symmetric(vertical: 50),
-                ),
-              SizedBox(
-                width: isScreenWide
-                    ? 400
-                    : MediaQuery.of(context).size.width * 0.7,
-                child: Column(
-                  children: [
-                    Visibility(
-                      visible: !isScreenWide,
-                      child: const StripeDivider(),
-                    ),
-                    AboutBox(
-                      title: "formal_studies".tr(),
-                      child: Column(
-                        children: [
-                          ListTile(
-                            leading: const Icon(Icons.school_outlined),
-                            title: Text("web_development".tr()),
-                            subtitle: Text("technical_course".tr()),
-                            trailing: CircleFlag('br'),
-                          ),
-                          ListTile(
-                            leading: const Icon(Icons.school_outlined),
-                            title: Text("information_systems".tr()),
-                            subtitle: Text("graduation_degree".tr()),
-                            trailing: CircleFlag('br'),
-                          ),
-                          ListTile(
-                            leading: const Icon(Icons.school_outlined),
-                            title: Text("international_business".tr()),
-                            subtitle: Text("graduation_degree".tr()),
-                            trailing: CircleFlag('de'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const StripeDivider(),
-                    AboutBox(
-                      title: "hobbies".tr(),
-                      child: Column(
-                        children: [
-                          ListTile(
-                            trailing: const Icon(Icons.skateboarding_outlined),
-                            title: Text("skating".tr()),
-                          ),
-                          ListTile(
-                            trailing:
-                                const Icon(Icons.directions_bike_outlined),
-                            title: Text("pedal".tr()),
-                          ),
-                          ListTile(
-                            trailing:
-                                const Icon(Icons.sports_basketball_outlined),
-                            title: Text("basketball".tr()),
-                          ),
-                          ListTile(
-                            trailing: const Icon(Icons.headset_outlined),
-                            title: Text("musical_production".tr()),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+            ),
+            if (isScreenWide)
+              Container(
+                width: 1,
+                height: 500,
+                color: Theme.of(context).colorScheme.primary,
+                margin: const EdgeInsets.symmetric(vertical: 50),
               ),
-            ],
-          ),
+            SizedBox(
+              width:
+                  isScreenWide ? 400 : MediaQuery.of(context).size.width * 0.9,
+              child: Column(
+                children: [
+                  Visibility(
+                    visible: !isScreenWide,
+                    child: const StripeDivider(),
+                  ),
+                  AboutBox(
+                    title: "formal_studies".tr(),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: const Icon(Icons.school_outlined),
+                          title: Text("web_development".tr()),
+                          subtitle: Text("technical_course".tr()),
+                          trailing: CircleFlag('br'),
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.school_outlined),
+                          title: Text("information_systems".tr()),
+                          subtitle: Text("graduation_degree".tr()),
+                          trailing: CircleFlag('br'),
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.school_outlined),
+                          title: Text("international_business".tr()),
+                          subtitle: Text("graduation_degree".tr()),
+                          trailing: CircleFlag('de'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const StripeDivider(),
+                  AboutBox(
+                    title: "hobbies".tr(),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          trailing: const Icon(Icons.skateboarding_outlined),
+                          title: Text("skating".tr()),
+                        ),
+                        ListTile(
+                          trailing: const Icon(Icons.directions_bike_outlined),
+                          title: Text("pedal".tr()),
+                        ),
+                        ListTile(
+                          trailing:
+                              const Icon(Icons.sports_basketball_outlined),
+                          title: Text("basketball".tr()),
+                        ),
+                        ListTile(
+                          trailing: const Icon(Icons.headset_outlined),
+                          title: Text("musical_production".tr()),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

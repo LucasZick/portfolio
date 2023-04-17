@@ -10,11 +10,18 @@ class GuideDialog extends StatelessWidget {
     return SimpleDialog(
       title: Column(
         children: [
-          Text("guide_dialog_title".tr()),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Container(
+              height: 1,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+          Center(child: Text("guide_dialog_title".tr())),
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Container(
-              height: 2,
+              height: 1,
               color: Theme.of(context).colorScheme.primary,
             ),
           ),

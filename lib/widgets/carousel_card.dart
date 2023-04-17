@@ -13,17 +13,14 @@ class CarouselCard extends StatelessWidget {
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          /* Image.network(
-            'https://img.freepik.com/fotos-gratis/a-paisagem-bonita-do-sol-da-praia-com-um-barco_1112-212.jpg?w=2000',
-            height: 160,
+        children: [
+          SizedBox(
+            height: 150,
             width: double.infinity,
-            fit: BoxFit.cover,
-          ), */
-          Container(
-            color: Colors.orange,
-            height: 160,
-            width: double.infinity,
+            child: Image.asset(
+              'assets/images/placeholders/banner-placeholder.jpg',
+              fit: BoxFit.cover,
+            ),
           ),
           Container(
             padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
@@ -31,14 +28,14 @@ class CarouselCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const Text(
-                  "Work",
+                  "Binary Piano",
                   style: TextStyle(
                     fontSize: 24,
                   ),
                 ),
                 Container(height: 10),
                 const Text(
-                  'Work description',
+                  'Web based binary piano, just for fun (not mine)',
                   style: TextStyle(
                     fontSize: 15,
                   ),
@@ -50,14 +47,14 @@ class CarouselCard extends StatelessWidget {
                       backgroundColor: Theme.of(context).colorScheme.primary,
                     ),
                     child: Text(
-                      "EXPLORE",
+                      "Take a look",
                       style: TextStyle(
                         color: Theme.of(context).textTheme.bodyMedium?.color,
                       ),
                     ),
                     onPressed: () => html.window.open(
                       'https://binarypiano.com/',
-                      'pianada pai',
+                      'binary piano',
                     ),
                   ),
                 ),

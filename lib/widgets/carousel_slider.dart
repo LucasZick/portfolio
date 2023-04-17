@@ -12,13 +12,13 @@ class Carousel extends StatelessWidget {
       child: CarouselSlider(
         items: widgetList,
         options: CarouselOptions(
+          enableInfiniteScroll: true,
           enlargeCenterPage: true,
           autoPlay: true,
-          autoPlayInterval: const Duration(minutes: 1),
-          aspectRatio: 16 / 9,
+          autoPlayInterval: const Duration(seconds: 20),
           autoPlayCurve: Curves.fastOutSlowIn,
-          enableInfiniteScroll: true,
           autoPlayAnimationDuration: const Duration(milliseconds: 800),
+          aspectRatio: 16 / 9,
           viewportFraction: 0.8,
         ),
       ),

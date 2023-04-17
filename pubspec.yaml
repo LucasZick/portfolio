@@ -75,6 +75,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/tech_logos/
+    - assets/images/placeholders/
     - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see

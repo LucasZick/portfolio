@@ -86,15 +86,17 @@ class _ContactContentState extends State<ContactContent> {
                 onPressed: ableToSend
                     ? () async {
                         if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(
+                          /* ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Processing Data')),
-                          );
-                          await Future.delayed(const Duration(seconds: 5));
+                          ); */
+                          await Future.delayed(const Duration(seconds: 1));
                           // ignore: use_build_context_synchronously
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Message sent')),
+                            const SnackBar(
+                                content: Text(
+                                    'Receiver server was disabled for a while, please contact by email: lucasalexandrezick@gmail.com')),
                           );
-                          _resetControllers();
+                          //_resetControllers();
                           _updateButton('');
                         }
                       }

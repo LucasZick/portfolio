@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:lucaszick/utils/animated_cursor_trail.dart';
+import 'package:lucaszick/widgets/copyright_dock.dart';
 import 'package:lucaszick/widgets/section_contents/about_content.dart';
 import 'package:lucaszick/widgets/guide_dialog.dart';
 import 'package:lucaszick/widgets/home_section.dart';
@@ -86,6 +88,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: BaseAppBar(appBar: AppBar(), title: ""),
       drawer: BaseDrawer(sectionKeys: sectionKeys),
+      extendBodyBehindAppBar: true,
       floatingActionButtonLocation: _showBackToTopButton
           ? FloatingActionButtonLocation.endFloat
           : FloatingActionButtonLocation.centerFloat,
@@ -104,7 +107,9 @@ class _HomePageState extends State<HomePage> {
             ),
       body: SingleChildScrollView(
         controller: controller,
-        child: Center(
+        child: AnimatedCursorTrail(
+          controller: controller,
+          active: true,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
@@ -139,17 +144,7 @@ class _HomePageState extends State<HomePage> {
                 spacer: 0,
                 child: ContactContent(),
               ),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: SelectableText(
-                    '© 2023 Lucas Alexandre Zick',
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                ),
-              )
+              const CopyrightDock()
             ],
           ),
         ),

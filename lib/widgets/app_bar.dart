@@ -47,6 +47,9 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
     Configs configsProvider = Provider.of<Configs>(context, listen: true);
     return AppBar(
       title: Text(title),
+      backgroundColor: Colors.transparent,
+      forceMaterialTransparency: true,
+      elevation: 0,
       actions: [
         DropdownButton(
           items: languageOptions,

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class Configs with ChangeNotifier {
   bool isDark;
+  String language;
 
-  Configs({this.isDark = false});
+  Configs({this.isDark = false, this.language = "en"});
 
   set changeDarkMode(value) {
     isDark = value;
@@ -16,7 +17,12 @@ class Configs with ChangeNotifier {
     BuildContext context,
   ) async {
     await context.setLocale(locale);
+    language = locale.languageCode;
     notifyListeners();
+  }
+
+  String getLanguage() {
+    return language;
   }
 
   void invertDarkMode() {

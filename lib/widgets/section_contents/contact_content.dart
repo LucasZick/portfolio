@@ -1,6 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:lucaszick/providers/configs.dart';
+import 'package:lucaszick/utils/send_message.dart';
 import 'package:lucaszick/utils/validators.dart';
+import 'package:provider/provider.dart';
 
 class ContactContent extends StatefulWidget {
   const ContactContent({super.key});
@@ -15,6 +18,7 @@ class _ContactContentState extends State<ContactContent> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
   bool ableToSend = false;
+  bool loading = false;
 
   void _updateButton(String _) {
     setState(() {
@@ -24,8 +28,21 @@ class _ContactContentState extends State<ContactContent> {
     });
   }
 
+  void _resetControllers() {
+    _nameController.text = '';
+    _emailController.text = '';
+    _messageController.text = '';
+  }
+
+  void _toggleLoading(bool state) {
+    setState(() {
+      loading = state;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    Configs configsProvider = Provider.of<Configs>(context, listen: true);
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Form(
@@ -80,17 +97,24 @@ class _ContactContentState extends State<ContactContent> {
                 onPressed: ableToSend
                     ? () async {
                         if (_formKey.currentState!.validate()) {
-                          /* ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Processing Data')),
-                          ); */
-                          await Future.delayed(const Duration(seconds: 1));
-                          // ignore: use_build_context_synchronously
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text(
-                                    'Receiver server was disabled for a while, please contact by email: lucasalexandrezick@gmail.com')),
-                          );
-                          //_resetControllers();
+                          _toggleLoading(true);
+                          String result = await MessageSender.sendMessage({
+                            "name": _nameController.text,
+                            "email": _emailController.text,
+                            "message": _messageController.text,
+                            "language": configsProvider.getLanguage(),
+                          });
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(result),
+                            duration: const Duration(seconds: 3),
+                            action: SnackBarAction(
+                              label: 'Dismiss',
+                              onPressed: ScaffoldMessenger.of(context)
+                                  .hideCurrentSnackBar,
+                            ),
+                          ));
+                          _resetControllers();
+                          _toggleLoading(false);
                           _updateButton('');
                         }
                       }
@@ -104,7 +128,12 @@ class _ContactContentState extends State<ContactContent> {
                       Text("send_message".tr(),
                           style: const TextStyle(fontSize: 20)),
                       const SizedBox(width: 10),
-                      const Icon(Icons.send_rounded),
+                      SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: loading
+                              ? const CircularProgressIndicator()
+                              : const Icon(Icons.send_rounded, size: 20)),
                     ],
                   ),
                 ),

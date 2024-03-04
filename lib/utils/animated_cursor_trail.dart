@@ -57,7 +57,7 @@ class AnimatedCursorTrailProvider extends ChangeNotifier {
     listTrail.add(position.translate(0, scrollOffset));
 
     // Limit the number of points to 15
-    if (listTrail.length > 10) {
+    if (listTrail.length > 15) {
       listTrail.removeAt(0);
     }
 
@@ -117,7 +117,7 @@ class _AnimatedCursorTrailState extends State<AnimatedCursorTrail> {
               if (widget.active)
                 AnimatedOpacity(
                   opacity: opacityLevel,
-                  duration: Duration(milliseconds: 500),
+                  duration: const Duration(milliseconds: 500),
                   child: CustomPaint(
                     painter: TrailPainter(provider.listTrail,
                         Theme.of(context).colorScheme.primary, provider),

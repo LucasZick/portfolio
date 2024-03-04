@@ -34,6 +34,7 @@ class _TechBoxState extends State<TechBox> {
           elevation: isHovered ? 20 : 10,
           shadowColor:
               isHovered ? Theme.of(context).colorScheme.primary : Colors.black,
+          color: Colors.white54,
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(10),
@@ -67,14 +68,6 @@ class _TechBoxState extends State<TechBox> {
                                 widget.techName.toUpperCase(),
                                 speed: const Duration(milliseconds: 800),
                                 colors: [
-                                  Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .color!,
-                                  Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .color!,
                                   Theme.of(context)
                                       .textTheme
                                       .bodyMedium!

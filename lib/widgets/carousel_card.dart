@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
 
 class CarouselCard extends StatelessWidget {
   const CarouselCard({super.key});
@@ -52,10 +51,11 @@ class CarouselCard extends StatelessWidget {
                         color: Theme.of(context).textTheme.bodyMedium?.color,
                       ),
                     ),
-                    onPressed: () => html.window.open(
+                    onPressed:
+                        () {} /*html.window.open(
                       'https://binarypiano.com/',
-                      'binary piano',
-                    ),
+                      'binary piano'*/
+                    ,
                   ),
                 ),
               ],

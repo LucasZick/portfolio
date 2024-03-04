@@ -8,25 +8,7 @@ class GuideDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
-      title: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Container(
-              height: 1,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-          Center(child: Text("guide_dialog_title".tr())),
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Container(
-              height: 1,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-        ],
-      ),
+      title: Center(child: Text("guide_dialog_title".tr())),
       children: [
         const SizedBox(height: 10),
         SizedBox(

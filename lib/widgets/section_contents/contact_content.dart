@@ -24,12 +24,6 @@ class _ContactContentState extends State<ContactContent> {
     });
   }
 
-  void _resetControllers() {
-    _nameController.text = '';
-    _emailController.text = '';
-    _messageController.text = '';
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(

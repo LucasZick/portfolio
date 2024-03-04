@@ -8,12 +8,12 @@ class WorkContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20),
+    return const Padding(
+      padding: EdgeInsets.only(top: 20),
       child: SizedBox(
         height: 400,
         child: Stack(
-          children: const [
+          children: [
             CardHole(side: Side.left),
             CardHole(side: Side.right),
             Carousel(

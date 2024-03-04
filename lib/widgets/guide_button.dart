@@ -44,7 +44,7 @@ class _GuideButtonState extends State<GuideButton> {
                 widget.icon,
                 color: isHovered
                     ? Theme.of(context).colorScheme.primary
-                    : Colors.grey,
+                    : Theme.of(context).textTheme.headlineMedium?.color,
                 size: isHovered ? 25 : 20,
               ),
               Center(

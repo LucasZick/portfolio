@@ -1,3 +1,4 @@
+import 'package:lucaszick/utils/random_color.dart';
 import 'package:universal_io/io.dart';
 
 import 'package:easy_localization/easy_localization.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               brightness: Brightness.light,
               colorScheme: ColorScheme.fromSwatch(
-                primarySwatch: Colors.orange,
+                primarySwatch: RandomColor.getRandomColor(),
                 brightness: Brightness.light,
               ),
               fontFamily: 'Proxima Nova',
@@ -60,8 +61,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
               brightness: Brightness.dark,
               colorScheme: ColorScheme.fromSwatch(
-                primarySwatch: Colors.orange,
-                accentColor: Colors.orange,
+                primarySwatch: RandomColor.getRandomColor(),
                 brightness: Brightness.dark,
               ),
               fontFamily: 'Proxima Nova',

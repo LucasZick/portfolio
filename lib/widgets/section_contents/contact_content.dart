@@ -96,7 +96,7 @@ class _ContactContentState extends State<ContactContent> {
               child: ElevatedButton(
                 onPressed: ableToSend
                     ? () async {
-                        if (_formKey.currentState!.validate()) {
+                        if (_formKey.currentState!.validate() && !loading) {
                           _toggleLoading(true);
                           String result = await MessageSender.sendMessage({
                             "name": _nameController.text,
@@ -113,7 +113,9 @@ class _ContactContentState extends State<ContactContent> {
                                   .hideCurrentSnackBar,
                             ),
                           ));
-                          _resetControllers();
+                          if (result[0] == "T") {
+                            _resetControllers();
+                          }
                           _toggleLoading(false);
                           _updateButton('');
                         }

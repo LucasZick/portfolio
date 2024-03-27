@@ -4,19 +4,21 @@ class HomeSection extends StatelessWidget {
   final Widget child;
   final GlobalKey scrollKey;
   final String title;
-  final double spacer;
+  final bool last;
   const HomeSection({
     super.key,
+    this.last = false,
     required this.child,
     required this.scrollKey,
     required this.title,
-    required this.spacer,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 1000,
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width > 1000 ? 1000 : size.width,
+      constraints: last ? null : BoxConstraints(minHeight: size.height * 1.2),
       key: scrollKey,
       child: Padding(
         padding: const EdgeInsets.all(30),
@@ -33,9 +35,6 @@ class HomeSection extends StatelessWidget {
               ),
             ),
             child,
-            SizedBox(
-              height: spacer,
-            )
           ],
         ),
       ),

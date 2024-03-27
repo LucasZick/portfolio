@@ -117,31 +117,27 @@ class _HomePageState extends State<HomePage> {
               HomeSection(
                 title: "me_title".tr(),
                 scrollKey: sectionKeys['me']!,
-                spacer: 400,
                 child: MeContent(),
               ),
               HomeSection(
                 title: 'about_option'.tr(),
                 scrollKey: sectionKeys['about']!,
-                spacer: 100,
                 child: AboutContent(),
               ),
               HomeSection(
                 title: 'skills_option'.tr(),
                 scrollKey: sectionKeys['skills']!,
-                spacer: 100,
                 child: SkillsContent(),
               ),
               HomeSection(
                 title: 'work_option'.tr(),
                 scrollKey: sectionKeys['work']!,
-                spacer: 100,
                 child: WorkContent(),
               ),
               HomeSection(
                 title: 'contact_option'.tr(),
                 scrollKey: sectionKeys['contact']!,
-                spacer: 0,
+                last: true,
                 child: ContactContent(),
               ),
               const CopyrightDock()

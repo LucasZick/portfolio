@@ -76,6 +76,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/tech_logos/
+    - assets/images/work/
     - assets/images/placeholders/
     - assets/translations/
 

@@ -17,7 +17,15 @@ class WorkContent extends StatelessWidget {
             CardHole(side: Side.left),
             CardHole(side: Side.right),
             Carousel(
-              widgetList: [CarouselCard()],
+              widgetList: [
+                CarouselCard(
+                  title: "AutoNav",
+                  description:
+                      "Development of a Multi-Robotic Teleoperation System with Intuitive Hand Recognition",
+                  url: "https://www.youtube.com/watch?v=94S4nJ3IwUw",
+                  imageName: "assets/images/work/auto_nav.png",
+                ),
+              ],
             ),
             HoleShadow(side: Side.left),
             HoleShadow(side: Side.right),

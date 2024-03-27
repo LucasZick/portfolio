@@ -10,10 +10,10 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
   BaseAppBar({
-    Key? key,
+    super.key,
     required this.title,
     required this.appBar,
-  }) : super(key: key);
+  });
 
   final List<DropdownMenuItem> languageOptions = [
     DropdownMenuItem(

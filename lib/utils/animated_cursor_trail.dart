@@ -83,11 +83,11 @@ class AnimatedCursorTrailProvider extends ChangeNotifier {
 
 class AnimatedCursorTrail extends StatefulWidget {
   const AnimatedCursorTrail({
-    Key? key,
+    super.key,
     this.child,
     this.active = true,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final Widget? child;
   final bool active;

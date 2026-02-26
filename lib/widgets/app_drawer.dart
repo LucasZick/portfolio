@@ -15,7 +15,6 @@ class BaseDrawer extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             const HeaderDrawer(),
-            const Divider(),
             Column(
               children: [
                 DrawerListButton(

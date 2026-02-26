@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -19,84 +18,123 @@ class _TechBoxState extends State<TechBox> {
     });
   }
 
+  Color getTechColor(String tech) {
+    switch (tech.toLowerCase()) {
+      case 'arduino':
+        return Colors.tealAccent[400]!;
+      case 'glpk':
+        return Colors.brown;
+      case 'latex':
+        return Colors.teal[800]!;
+      case 'matlab':
+        return Colors.orangeAccent[700]!;
+      case 'oracle':
+        return Colors.red[800]!;
+      case 'qgis':
+        return Colors.lightGreen;
+      case 'ros':
+        return Colors.teal;
+      case 'python':
+        return Colors.blueAccent;
+      case 'javascript':
+        return Colors.amber;
+      case 'dart':
+        return Colors.lightBlue;
+      case 'flutter':
+        return Colors.blue;
+      case 'html':
+        return Colors.deepOrange;
+      case 'css':
+        return Colors.indigo;
+      case 'docker':
+        return Colors.cyan;
+      case 'linux':
+        return Colors.grey;
+      case 'sql':
+        return Colors.orange;
+      case 'postgres':
+        return Colors.purple;
+      case 'mysql':
+        return Colors.blueGrey;
+      case 'kafka':
+        return Colors.pinkAccent;
+      case 'redis':
+        return Colors.redAccent;
+      case 'mongo':
+        return Colors.green;
+      case 'git':
+        return Colors.red;
+      case 'github':
+        return Colors.grey;
+      case 'bash':
+        return Colors.grey;
+      
+      default:
+        return Colors.grey;
+    }
+  }
+
   @override
-  Widget build(BuildContext context) {
-    final hoveredTransform = Matrix4.identity()..translate(0, -8);
-    final transform = isHovered ? hoveredTransform : Matrix4.identity();
-    return MouseRegion(
-      onEnter: (_) => setHover(true),
-      onExit: (_) => setHover(false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        transform: transform,
-        curve: Curves.ease,
-        child: Card(
-          elevation: isHovered ? 20 : 10,
-          shadowColor:
-              isHovered ? Theme.of(context).colorScheme.primary : Colors.black,
-          color: Colors.white54,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'assets/images/tech_logos/${widget.techName}.png',
-                    filterQuality: FilterQuality.high,
-                    width: 50,
-                    height: 50,
-                  ),
-                  if (isHovered)
-                    DefaultTextStyle(
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Theme.of(context).textTheme.bodyMedium!.color!,
-                      ),
-                      child: Stack(
-                        children: [
-                          Text(
-                            widget.techName.toUpperCase(),
-                            maxLines: 1,
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                          AnimatedTextKit(
-                            isRepeatingAnimation: true,
-                            repeatForever: true,
-                            animatedTexts: [
-                              ColorizeAnimatedText(
-                                widget.techName.toUpperCase(),
-                                speed: const Duration(milliseconds: 800),
-                                colors: [
-                                  Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .color!,
-                                  Theme.of(context).colorScheme.primary,
-                                  Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .color!,
-                                ],
-                                textStyle: const TextStyle(fontSize: 15),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    )
-                  else
-                    AutoSizeText(
-                      widget.techName.toUpperCase(),
-                      style: const TextStyle(fontSize: 15),
-                      maxLines: 1,
-                    )
-                ],
-              ),
+Widget build(BuildContext context) {
+  final techColor = getTechColor(widget.techName);
+  final hoveredTransform = Matrix4.identity()..translate(0.0, -6.0);
+  final transform = isHovered ? hoveredTransform : Matrix4.identity();
+
+  final brightness = Theme.of(context).brightness;
+  final isDarkMode = brightness == Brightness.dark;
+  final textColor = isDarkMode ? Colors.white : Colors.black87;
+
+  return MouseRegion(
+    onEnter: (_) => setHover(true),
+    onExit: (_) => setHover(false),
+    child: AnimatedContainer(
+      duration: const Duration(milliseconds: 250),
+      transform: transform,
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: isHovered ? techColor.withOpacity(0.8) : Colors.transparent,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: isHovered ? techColor : Colors.transparent,
+          width: isHovered ? 2.5 : 0.5,
+        ),
+        boxShadow: isHovered
+            ? [
+                BoxShadow(
+                  color: techColor.withOpacity(0.4),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                )
+              ]
+            : [],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          AnimatedScale(
+            scale: isHovered ? 1.15 : 1.0,
+            duration: const Duration(milliseconds: 200),
+            child: Image.asset(
+              'assets/images/tech_logos/${widget.techName}.png',
+              height: 45,
+              width: 45,
+              fit: BoxFit.contain,
             ),
           ),
-        ),
+          const SizedBox(height: 6),
+          AutoSizeText(
+            widget.techName.toUpperCase(),
+            maxLines: 1,
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+              color: textColor,
+            ),
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
+
 }

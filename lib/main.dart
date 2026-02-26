@@ -13,7 +13,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   String localeName = Platform.localeName;
-  List suportedLocales = const [
+  List supportedLocales = const [
     Locale('en', 'US'),
     Locale('de', 'DE'),
     Locale('pt', 'BR'),
@@ -27,7 +27,7 @@ Future<void> main() async {
       Locale('de', 'DE'),
       Locale('pt', 'BR'),
     ],
-    startLocale: suportedLocales.contains(actualLocale)
+    startLocale: supportedLocales.contains(actualLocale)
         ? actualLocale
         : const Locale("en", "US"),
     fallbackLocale: const Locale("en", "US"),
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             localizationsDelegates: context.localizationDelegates,
             debugShowCheckedModeBanner: false,
-            title: "Lucas Zick",
+            title: "Lucas Zick's Portfolio",
             theme: ThemeData(
               brightness: Brightness.light,
               colorScheme: ColorScheme.fromSwatch(

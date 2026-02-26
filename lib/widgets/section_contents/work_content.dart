@@ -11,7 +11,7 @@ class WorkContent extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(top: 20),
       child: SizedBox(
-        height: 400,
+        height: 600,
         child: Stack(
           children: [
             CardHole(side: Side.left),
